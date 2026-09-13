@@ -1,19 +1,12 @@
-﻿using Microsoft.Extensions.Logging;
-using SealSoundMaker.Util;
-using SoundFlow.Abstracts.Devices;
+﻿using SealSoundMaker.Util;
 using SoundFlow.Backends.MiniAudio;
-using SoundFlow.Components;
 using SoundFlow.Structs;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading.Channels;
 
 namespace SealSoundMaker.Audio
 {
     public static class AudioHandler
     {
-        private static MiniAudioEngine audioEngine = new MiniAudioEngine();
+        public static MiniAudioEngine audioEngine = new MiniAudioEngine();
 
         public static bool initialized;
 
@@ -27,9 +20,10 @@ namespace SealSoundMaker.Audio
         public static void Init()
         {
             Log.Info("Initializing Audio Engine...");
-            bool initRecording = Recording.Init(audioEngine);
+            bool initRecording = Recording.Init();
+            bool initPlayback = Playback.Init();
 
-            if (initRecording)
+            if (initRecording && initPlayback)
             {
                 initialized = true;
                 Log.Info("Successfully initialized Audio Engine!");

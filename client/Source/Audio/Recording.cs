@@ -1,13 +1,10 @@
 ﻿using SealSoundMaker.Util;
-using SoundFlow.Abstracts;
 using SoundFlow.Abstracts.Devices;
 using SoundFlow.Backends.MiniAudio;
 using SoundFlow.Components;
 using SoundFlow.Enums;
 using SoundFlow.Structs;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace SealSoundMaker.Audio
 {
@@ -16,8 +13,10 @@ namespace SealSoundMaker.Audio
         private static AudioCaptureDevice device;
         private static Recorder recorder;
 
-        public static bool Init(MiniAudioEngine engine)
+        public static bool Init()
         {
+            MiniAudioEngine engine = AudioHandler.audioEngine;
+
             try
             {
                 //If no audio devices are available, show error

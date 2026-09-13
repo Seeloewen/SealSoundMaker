@@ -38,4 +38,9 @@ public partial class MainWindow : Window
     {
         Recording.Stop();
     }
+
+    private void btnPlayback_Click(object? sender, RoutedEventArgs e)
+    {
+        Playback.Play("albon.wav");
+    }
 }
