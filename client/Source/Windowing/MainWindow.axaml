@@ -1,0 +1,29 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="SealSoundMaker.Windowing.MainWindow"
+        Title="" Width="800" Height="600" ExtendClientAreaToDecorationsHint="True"
+        >
+    <Grid x:Name="grdMain" Background="#404040">
+        <Grid x:Name="grdTop" Height="65" VerticalAlignment="Top" Background="#292929" PointerPressed="Grid_PointerPressed">
+            <TextBlock x:Name="tblHeader" FontSize="32" FontWeight="DemiBold" Margin="15" Foreground="White">SealSoundMaker</TextBlock>
+            <TextBlock x:Name="tblVersion" FontSize="18" FontWeight="DemiBold" Margin="295,28,0,0" FontStyle="Italic" Foreground="#f0f0f0">Version 1.0.0-dev</TextBlock>
+        </Grid>
+        <Grid x:Name="grdBottom" Height="50" VerticalAlignment="Bottom" Background="#292929">
+            <Button x:Name="btnViewAllSounds" Name="btnViewAllSounds" Margin="0,0,10,0" HorizontalAlignment="Right">View All Sounds</Button>
+            <Button Margin="10,0,0,0" Content="...">
+                <Button.Flyout>
+                    <MenuFlyout>
+                        <MenuItem x:Name="miLog" Header="Log" Click="miLog_Click"/>
+                        <MenuItem x:Name="miAbout" Header="About"/>
+                    </MenuFlyout>
+                </Button.Flyout>
+            </Button>
+        </Grid>
+        <Button x:Name="btnRecord" Margin="10,80,0,0" VerticalAlignment="Top" Click="btnRecord_Click">Record</Button>
+        <Button x:Name="btnStopRecording" Margin="200,80,0,0" VerticalAlignment="Top" Click="btnStopRecording_Click">Stop</Button>
+
+    </Grid>
+</Window>

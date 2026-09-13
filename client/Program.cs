@@ -1,7 +1,7 @@
 ﻿using Avalonia;
 using System;
 
-namespace SealSoundsMaker;
+namespace SealSoundMaker;
 
 class Program
 {
